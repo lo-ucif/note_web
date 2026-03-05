@@ -1,4 +1,3 @@
-console.log("Server file is running");
 import express from "express";
 import { connectdatabase } from "./config/db";
 import noterouter from "./router/noterouter";
