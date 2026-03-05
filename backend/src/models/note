@@ -1,0 +1,17 @@
+import mongoose, { Document, Schema } from "mongoose";
+
+export interface Inote extends Document {
+  title: string;
+  desc: string;
+  userid: number;
+  creatdate: Date;
+  status: "completed" | "notcompleted";
+}
+const noteshema: Schema = new Schema({
+  title: { type: String },
+  desc: { type: String },
+  userid: { type: String },
+  creatdate: { type: String },
+  status: { type: String },
+});
+export default mongoose.model<Inote>("note", noteshema);
