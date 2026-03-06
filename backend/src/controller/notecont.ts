@@ -70,13 +70,17 @@ export const deletallnote = async (req: Request, res: Response) => {
 //update note (set function if modify any and his clicked saved)
 export const updatenote = async (req: Request, res: Response) => {
   try {
-    const noteupdated = await note.findByIdAndUpdate(req.params.id, req.body);
+    const noteupdated = await note.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
   } catch (error) {}
 };
 // update state (completed or not completed)
 export const updatestate = async (req: Request, res: Response) => {
   try {
-    const updatestate = await note.findByIdAndUpdate(req.params.id, req.body);
+    const updatestate = await note.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!updatestate) {
       res.json("the note not found");
     } else {
