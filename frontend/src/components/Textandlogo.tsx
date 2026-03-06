@@ -1,27 +1,17 @@
 import React from "react";
+import "../style/style.css";
 type info = {
   title: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
-export default function Textandlogo() {
+export default function Textandlogo({ Icon, title }: info) {
   return (
-    <div>
-      <div className="flex py-0.5 px-5 flex-row justify-between w-full basecolor h-fit">
-        <div className="flex items-center">Search</div>
-        <div className="flex gap-5 items-center justify-center p-2.5 rounded-full">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-          >
-            <path
-              d="M12.5 2.5C10.9357 2.50084 9.39346 2.86864 7.99715 3.57386C6.60084 4.27908 5.38945 5.30203 4.46034 6.56051C3.53123 7.81899 2.91032 9.27788 2.64751 10.8199C2.3847 12.362 2.48732 13.9442 2.94713 15.4394C3.40694 16.9346 4.2111 18.301 5.29499 19.429C6.37888 20.5569 7.71226 21.4148 9.18797 21.9337C10.6637 22.4526 12.2405 22.6181 13.7918 22.4169C15.3431 22.2157 16.8256 21.6533 18.12 20.775L24.3 26.95C24.4717 27.1342 24.6787 27.282 24.9087 27.3845C25.1387 27.4869 25.387 27.542 25.6387 27.5465C25.8905 27.5509 26.1406 27.5046 26.374 27.4103C26.6075 27.316 26.8196 27.1756 26.9976 26.9976C27.1757 26.8195 27.316 26.6075 27.4103 26.374C27.5046 26.1405 27.5509 25.8905 27.5465 25.6387C27.5421 25.3869 27.487 25.1387 27.3845 24.9087C27.282 24.6787 27.1342 24.4717 26.95 24.3L20.775 18.12C21.7966 16.6165 22.3891 14.8629 22.4886 13.0478C22.5882 11.2328 22.1912 9.42494 21.3402 7.81865C20.4893 6.21237 19.2166 4.86841 17.659 3.93129C16.1014 2.99417 14.3178 2.49934 12.5 2.5ZM6.25003 12.5C6.25003 10.8424 6.90851 9.25269 8.08061 8.08058C9.25271 6.90848 10.8424 6.25 12.5 6.25C14.1576 6.25 15.7473 6.90848 16.9194 8.08058C18.0915 9.25269 18.75 10.8424 18.75 12.5C18.75 14.1576 18.0915 15.7473 16.9194 16.9194C15.7473 18.0915 14.1576 18.75 12.5 18.75C10.8424 18.75 9.25271 18.0915 8.08061 16.9194C6.90851 15.7473 6.25003 14.1576 6.25003 12.5Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+    <div className="flex py-2.5 px-5 flex-row justify-between items-center w-full basecolor h-fit">
+      <div className="flex flex-row whitespace-nowrap text-xl">
+        {title}
+      </div>
+      <div className="flex gap-5 items-center justify-center p-3 rounded-full">
+        <Icon />
       </div>
     </div>
   );
