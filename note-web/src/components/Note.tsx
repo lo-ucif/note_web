@@ -3,10 +3,16 @@ export default function Note() {
   return (
     <div className="flex flex-col  p-2.5 gap-2 basecolor w-full">
       <div className="flex justify-between items-start content-start">
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start w-[60%]">
           <div className="text-xl">hello first note</div>
-          <div className="text-[12px] text-[#BBB] w-[80%]">
-            descripe vezbgui fizeb fziebif iob zaizeob izbeaiofb ....
+          <div className="text-[12px] text-[#BBB]">
+            descripe vezbgui fizeb fziebif iob ....descripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iobdescripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iobdescripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iobdescripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iobdescripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iobdescripe vezbgui fizeb
+            fziebif iobdescripe vezbgui fizeb fziebif iob
           </div>
         </div>
         <svg
