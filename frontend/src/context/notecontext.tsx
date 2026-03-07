@@ -1,28 +1,29 @@
-// import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useState } from "react";
+import type { ReactNode } from "react";
 
-// type LastIdContextType = {
-//   lastId: number | null;
-//   setLastId: React.Dispatch<React.SetStateAction<number | null>>;
-// };
+type NoteActive = {
+  title: string;
+  settitle: (title: string) => void;
+  desc: string;
+  setdesc: (desc: string) => void;
+};
 
-// const LastIdContext = createContext<LastIdContextType | undefined>(undefined);
+// eslint-disable-next-line react-refresh/only-export-components
+export const NoteActiveContext = createContext<NoteActive | undefined>(
+  undefined,
+);
 
-// export function LastIdProvider({ children }: { children: ReactNode }) {
-//   const [lastId, setLastId] = useState<number | null>(null);
+type UserProviderProps = {
+  children: ReactNode;
+};
 
-//   return (
-//     <LastIdContext.Provider value={{ lastId, setLastId }}>
-//       {children}
-//     </LastIdContext.Provider>
-//   );
-// }
+export function NoteProvider({ children }: UserProviderProps) {
+  const [title, settitle] = useState<string>("");
+  const [desc, setdesc] = useState<string>("");
 
-// // export function useLastId() {
-// //   const context = useContext(LastIdContext);
-
-// //   if (!context) {
-// //     throw new Error("useLastId must be used inside LastIdProvider");
-// //   }
-
-// //   return context;
-// // }
+  return (
+    <NoteActiveContext.Provider value={{ title, settitle, desc, setdesc }}>
+      {children}
+    </NoteActiveContext.Provider>
+  );
+}

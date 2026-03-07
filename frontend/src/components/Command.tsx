@@ -1,6 +1,7 @@
 import Option from "./Option";
 import icon01 from "../assets/Addicon";
 import icon02 from "../assets/Deleticon";
+
 export default function Command() {
   return (
     <div className="flex flex-row items-center justify-between px-1">

@@ -2,11 +2,19 @@ import "../style/style.css";
 import Logo01 from "../assets/Onenoteicon";
 import "../style/animation.css";
 import { motion } from "framer-motion";
-
+import { useContext } from "react";
+import { NoteActiveContext } from "../context/notecontext";
 type allinfo = {
   state: boolean | undefined;
 };
 export default function Noteallinfo({ state }: allinfo) {
+  const context = useContext(NoteActiveContext);
+
+  if (!context) {
+    throw new Error("Must be used within NoteProvider");
+  }
+
+  const { title, desc } = context;
   const comp = state ? "notcompleted" : "completed";
   return (
     <motion.div
@@ -19,7 +27,7 @@ export default function Noteallinfo({ state }: allinfo) {
     >
       <div className="flex justify-between items-start content-start">
         <div className="flex flex-col items-start w-[60%] gap-3">
-          <div className="text-3xl text-white">title</div>
+          <div className="text-3xl text-white">{title}</div>
         </div>
         <Logo01 />
       </div>
@@ -27,22 +35,7 @@ export default function Noteallinfo({ state }: allinfo) {
         <div className="text-[12px] text-[#FFD900]">{comp}</div>
         <div className="text-[12px] text-[#FFD900]">04/04/2026 8:21 pm</div>
       </div>
-      <div className="text-l text-[#BBB] leading-relaxed">
-        gjkb igzhe ogho ghzio g zahegi ihzag hg zai gh ghauigh hzah ezorngion
-        gozen gzeng iozen iong zahegignzeokng n gzengoi nnhisnvskl jigzeze kzj
-        jsdiofj j kshfi jf a izhfoi oisdfnfkhsfjudfknccoa a$jf gjkb igzhe ogho
-        ghzio g zahegi ihzag hg zai gh ghauigh hzah ezorngion gozen gzeng iozen
-        iong zahegignzeokng n gzengoi nnhisnvskl jigzeze kzj jsdiofj j kshfi jf
-        a izhfoi oisdfnfkhsfjudfknccoa a$jfgjkb igzhe ogho ghzio g zahegi ihzag
-        hg zai gh ghauigh hzah ezorngion gozen gzeng iozen iong zahegignzeokng n
-        gzengoi nnhisnvskl jigzeze kzj jsdiofj j kshfi jf a izhfoi
-        oisdfnfkhsfjudfknccoa a$jfgjkb igzhe ogho ghzio g zahegi ihzag hg zai gh
-        ghauigh hzah ezorngion gozen gzeng iozen iong zahegignzeokng n gzengoi
-        nnhisnvskl jigzeze kzj jsdiofj j kshfi jf a izhfoi oisdfnfkhsfjudfknccoa
-        a$jfgjkb igzhe ogho ghzio g zahegi ihzag hg zai gh ghauigh hzah
-        ezorngion gozen gzeng iozen iong zahegignzeokng n gzengoi nnhisnvskl
-        jigzeze kzj jsdiofj j kshfi jf a izhfoi oisdfnfkhsfjudfknccoa a$jf{" "}
-      </div>
+      <div className="text-l text-[#BBB] leading-relaxed">{desc}</div>
     </motion.div>
   );
 }

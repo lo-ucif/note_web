@@ -19,16 +19,16 @@ export default function Homepage() {
       >
         <Link to="/info" className="w-full">
           <Note
-            title="hello"
-            desc="my name is loucif tamer ahmed"
-            date="07/03/2026"
+            titlen="hello"
+            descn="my name is loucif tamer ahmed it is test01"
+            daten="07/03/2026"
           />
         </Link>
         <Link to="/info" className="w-full">
           <Note
-            title="hello"
-            desc="my name is loucif tamer ahmed"
-            date="07/03/2026"
+            titlen="hello"
+            descn="my name is loucif tamer ahmed"
+            daten="07/03/2026"
           />
         </Link>{" "}
       </motion.div>

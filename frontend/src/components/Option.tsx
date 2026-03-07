@@ -1,13 +1,17 @@
 import React from "react";
 import "../style/style.css";
 import { motion } from "framer-motion";
+import { useNotification } from "../context/NotificationContext";
+
 type info = {
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export default function Option({ Icon }: info) {
+  const { showNotification } = useNotification();
   return (
     <motion.div
+     onClick={() => showNotification("Note saved successfully")}
       className="flex py-2.5 px-2.5 flex-row justify-between items-center w-full basecolor h-fit gap-1"
       whileHover={{
         boxShadow: "0px 0px 20px #FFD900",

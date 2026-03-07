@@ -16,6 +16,12 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
+.basecolor2 {
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+
+}
+
 /* width */
 .scroll-custom::-webkit-scrollbar {
   width: 4px;
