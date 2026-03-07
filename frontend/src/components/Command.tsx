@@ -1,7 +1,6 @@
 import Option from "./Option";
 import icon01 from "../assets/Addicon";
 import icon02 from "../assets/Deleticon";
-import icon03 from "../assets/Allnoteicon";
 export default function Command() {
   return (
     <div className="flex flex-row items-center justify-between px-1">
@@ -9,7 +8,6 @@ export default function Command() {
       <div className="flex flex-row gap-3">
         <Option Icon={icon01} title="Add" />
         <Option Icon={icon02} title="Delete all" />
-        <Option Icon={icon03} title="" />
       </div>
     </div>
   );
