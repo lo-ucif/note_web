@@ -8,11 +8,15 @@ import Complet02 from "../assets/Saved02";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Command02() {
+type status = {
+  state: boolean | undefined;
+  setstate: (value: boolean) => void;
+};
+export default function Command02({ state, setstate }: status) {
   const [completed, setCompleted] = useState(false);
-
   const toggleComplete = () => {
     setCompleted(!completed);
+    setstate(!state);
   };
 
   return (

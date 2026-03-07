@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Detailepage from "./pages/Detailepage";
+// import { LastIdProvider } from "./context/notecontext";
 
 import "./App.css";
 function App() {

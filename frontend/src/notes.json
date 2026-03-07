@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "1",
+    "title": "Study React",
+    "desc": "Learn useContext and useEffect in React.",
+    "userid": 1,
+    "creatdate": "2026-04-04T20:21:00.000Z",
+    "status": "completed"
+  },
+  {
+    "_id": "2",
+    "title": "Build Notes App",
+    "desc": "Create frontend and backend with Node and React.",
+    "userid": 1,
+    "creatdate": "2026-04-03T18:10:00.000Z",
+    "status": "notcompleted"
+  },
+  {
+    "_id": "3",
+    "title": "Practice TypeScript",
+    "desc": "Understand interfaces and types in React.",
+    "userid": 1,
+    "creatdate": "2026-04-02T15:30:00.000Z",
+    "status": "completed"
+  }
+]

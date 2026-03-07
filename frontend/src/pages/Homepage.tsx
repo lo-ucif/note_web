@@ -18,26 +18,19 @@ export default function Homepage() {
         className="flex flex-col items-start gap-2.5 self-stretch "
       >
         <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
-        </Link>{" "}
-        <Link to="/info" className="w-full">
-          <Note />
+          <Note
+            title="hello"
+            desc="my name is loucif tamer ahmed"
+            date="07/03/2026"
+          />
         </Link>
+        <Link to="/info" className="w-full">
+          <Note
+            title="hello"
+            desc="my name is loucif tamer ahmed"
+            date="07/03/2026"
+          />
+        </Link>{" "}
       </motion.div>
     </div>
   );

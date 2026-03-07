@@ -3,7 +3,11 @@ import Logo01 from "../assets/Onenoteicon";
 import "../style/animation.css";
 import { motion } from "framer-motion";
 
-export default function Noteallinfo() {
+type allinfo = {
+  state: boolean | undefined;
+};
+export default function Noteallinfo({ state }: allinfo) {
+  const comp = state ? "notcompleted" : "completed";
   return (
     <motion.div
       className="basecolor flex flex-col  p-5 gap-3  w-full "
@@ -20,7 +24,7 @@ export default function Noteallinfo() {
         <Logo01 />
       </div>
       <div className="flex flex-row justify-between items-center">
-        <div className="text-[12px] text-[#FFD900]">completed</div>
+        <div className="text-[12px] text-[#FFD900]">{comp}</div>
         <div className="text-[12px] text-[#FFD900]">04/04/2026 8:21 pm</div>
       </div>
       <div className="text-l text-[#BBB] leading-relaxed">
