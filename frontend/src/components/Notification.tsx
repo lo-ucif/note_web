@@ -1,7 +1,7 @@
 import "../style/style.css";
 import Onenoteicon from "../assets/Onenoteicon";
 import { useNotification } from "../context/NotificationContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Notification() {
   const { active, message } = useNotification();
@@ -9,10 +9,17 @@ export default function Notification() {
   if (!active) return null;
 
   return (
-    <motion.div className="basecolor2 text-white px-4 py-2 rounded flex flex-row items-center gap-2"
-    initial>
-      <div>{message}</div>
-      <Onenoteicon />
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        className="basecolor2 text-white px-4 py-2 rounded flex flex-row items-center gap-2"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.4 }}
+      >
+        <div>{message}</div>
+        <Onenoteicon />
+      </motion.div>
+    </AnimatePresence>
   );
 }
