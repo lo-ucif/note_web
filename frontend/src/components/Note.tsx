@@ -2,6 +2,7 @@ import "../style/style.css";
 import Logo01 from "../assets/Onenoteicon";
 import Logo02 from "../assets/Allnoteicon";
 import "../style/animation.css";
+import { motion } from "framer-motion";
 
 export default function Note() {
   const yourText: string =
@@ -9,7 +10,14 @@ export default function Note() {
   const title: string = "title note";
 
   return (
-    <div className="basecolor flex flex-col  p-5 gap-3  w-full ">
+    <motion.div
+      className="basecolor flex flex-col  p-5 gap-3  w-full "
+      whileHover={{
+        boxShadow: "0px 0px 10px #FFD900",
+      }}
+      whileTap={{ scale: 0.9}}
+      transition={{}}
+    >
       <div className="flex justify-between items-start content-start">
         <div className="flex flex-col items-start w-[60%] gap-3">
           <div className="text-3xl text-white">
@@ -28,6 +36,6 @@ export default function Note() {
 
         <div className="text-[12px] text-[#FFD900]">04/04/2026 8:21 pm</div>
       </div>
-    </div>
+    </motion.div>
   );
 }

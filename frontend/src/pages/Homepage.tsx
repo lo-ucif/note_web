@@ -4,7 +4,7 @@ import Note from "../components/Note";
 import Search from "../components/Search";
 import "../style/animation.css";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 export default function Homepage() {
   return (
     <div className="flex w-full flex-col gap-2.5">
@@ -17,11 +17,27 @@ export default function Homepage() {
         transition={{ duration: 1, delay: 1 }}
         className="flex flex-col items-start gap-2.5 self-stretch "
       >
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>{" "}
+        <Link to="/info" className="w-full">
+          <Note />
+        </Link>
       </motion.div>
     </div>
   );

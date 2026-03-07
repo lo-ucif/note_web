@@ -7,11 +7,11 @@ import App from "./App.tsx";
 import "./style/animation.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div className="w-[90%]">
-      <div className="sticky top-0 z-10  slide-in-blurred-top basecolor">
+    <div className="w-[90%] slide-in-blurred-top">
+      <div className="sticky top-0 z-10   basecolor">
         <Textandlogo Icon={logo01} title="Good Morning, Ahmed !" />
       </div>
-      <div className="pt-3 slide-in-blurred-top">
+      <div className="pt-3 ">
         <App />
       </div>
     </div>

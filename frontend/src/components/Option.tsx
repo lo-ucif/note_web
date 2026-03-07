@@ -13,14 +13,12 @@ export default function Option({ Icon }: info) {
         boxShadow: "0px 0px 20px #FFD900",
         backgroundColor: "#FFD900",
       }}
+      whileTap={{ backgroundColor: "#FFD900", scale: 0.5 }}
       transition={{ duration: 0.3 }}
     >
-      <motion.div
-        className="flex gap-5 items-center justify-center rounded-full"
-        whileHover={{ backgroundColor: "#FFD900" }}
-      >
+      <div className="flex gap-5 items-center justify-center rounded-full">
         <Icon />
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

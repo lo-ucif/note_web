@@ -1,14 +1,27 @@
 import React from "react";
-import "../style/style.css";
-type info = {
+type Info = {
   title: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
-export default function Search({ Icon, title }: info) {
+
+export default function Search({ Icon, title }: Info) {
   return (
-    <div className="flex py-2.5 px-2.5 flex-row justify-between items-center w-full basecolor h-fit gap-1">
-      <div className="flex flex-row whitespace-nowrap">{title}</div>
-      <div className="flex gap-5 items-center justify-center rounded-full">
+    <div className="relative mb-3">
+      <input
+        type="text"
+        id="exampleFormControlInput1"
+        // placeholder={title}
+        className="peer block min-h-auto w-full rounded border-0 bg-transparent px-3 pr-10 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-twe-input-state-active:placeholder:opacity-100 dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+      />
+
+      <label
+        htmlFor="exampleFormControlInput1"
+        className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-top-left truncate pt-[0.37rem] leading-[1.6] text-neutral-100 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-twe-input-state-active:-translate-y-[0.9rem] peer-data-twe-input-state-active:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+      >
+        {title}
+      </label>
+
+      <div className="absolute right-3 top-1/2 -translate-y-1/2">
         <Icon />
       </div>
     </div>
