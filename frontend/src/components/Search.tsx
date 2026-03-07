@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/style.css";
 type Info = {
   title: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -6,7 +7,7 @@ type Info = {
 
 export default function Search({ Icon, title }: Info) {
   return (
-    <div className="relative mb-3">
+    <div className="relative mb-3 basecolor p-3">
       <input
         type="text"
         id="exampleFormControlInput1"
@@ -16,7 +17,7 @@ export default function Search({ Icon, title }: Info) {
 
       <label
         htmlFor="exampleFormControlInput1"
-        className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-top-left truncate pt-[0.37rem] leading-[1.6] text-neutral-100 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-twe-input-state-active:-translate-y-[0.9rem] peer-data-twe-input-state-active:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+        className="pointer-events-none absolute left-3 top-3 mb-0 max-w-[90%] origin-top-left truncate pt-[0.37rem] leading-[1.6] text-neutral-100 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-twe-input-state-active:-translate-y-[0.9rem] peer-data-twe-input-state-active:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
       >
         {title}
       </label>

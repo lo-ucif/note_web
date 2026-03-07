@@ -14,7 +14,7 @@ export default function Homepage() {
       <motion.div
         initial={{ opacity: 0, x: -2000, y: 0 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 0.6, delay: 0.01 }}
         className="flex flex-col items-start gap-2.5 self-stretch "
       >
         <Link to="/info" className="w-full">
