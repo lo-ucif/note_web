@@ -1,14 +1,20 @@
 .color {
-border-radius: 20px;
-background: rgba(255, 255, 255, 0.15);
-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.21);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 24px 12px rgba(255, 255, 255, 1.2);
 }
 .basecolor {
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
-
 
 /* width */
 .scroll-custom::-webkit-scrollbar {
@@ -17,17 +23,17 @@ backdrop-filter: blur(10px);
 
 /* Track */
 .scroll-custom::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 .scroll-custom::-webkit-scrollbar-thumb {
-  background: #FFD900; 
+  background: #ffd900;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .scroll-custom::-webkit-scrollbar-thumb:hover {
-  background: #dcdcdc; 
+  background: #dcdcdc;
 }

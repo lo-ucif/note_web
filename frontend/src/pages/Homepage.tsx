@@ -1,21 +1,28 @@
 import logo02 from "../assets/Searchicon";
 import Command from "../components/Command";
-import Option from "../components/Option";
 import Note from "../components/Note";
+import Search from "../components/Search";
+import "../style/animation.css";
+import { motion } from "framer-motion";
+
 export default function Homepage() {
   return (
     <div className="flex w-full flex-col gap-2.5">
       <Command />
-      <Option Icon={logo02} title="Search" />
+      <Search Icon={logo02} title="Search" />
 
-      <div className="flex flex-col items-start gap-2.5 self-stretch">
+      <motion.div
+        initial={{ opacity: 0, x: -2000, y: 0 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="flex flex-col items-start gap-2.5 self-stretch "
+      >
         <Note />
         <Note />
         <Note />
         <Note />
         <Note />
-        <Note />
-      </div>
+      </motion.div>
     </div>
   );
 }

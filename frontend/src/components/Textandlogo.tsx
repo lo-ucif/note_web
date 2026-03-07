@@ -6,7 +6,7 @@ type info = {
 };
 export default function Textandlogo({ Icon, title }: info) {
   return (
-    <div className="flex py-2.5 px-5 flex-row justify-between items-center w-full basecolor h-fit">
+    <div className="flex py-2.5 px-5 flex-row justify-between items-center w-full  h-fit">
       <div className="flex flex-row whitespace-nowrap text-xl">
         {title}
       </div>

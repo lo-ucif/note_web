@@ -1,17 +1,26 @@
 import React from "react";
 import "../style/style.css";
+import { motion } from "framer-motion";
 type info = {
-  title: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
-export default function Option({ Icon, title }: info) {
+export default function Option({ Icon }: info) {
   return (
-    <div className="flex py-2.5 px-2.5 flex-row justify-between items-center w-full basecolor h-fit gap-1">
-      <div className="flex flex-row whitespace-nowrap">{title}</div>
-      <div className="flex gap-5 items-center justify-center rounded-full">
+    <motion.div
+      className="flex py-2.5 px-2.5 flex-row justify-between items-center w-full basecolor h-fit gap-1"
+      whileHover={{
+        boxShadow: "0px 0px 20px #FFD900",
+        backgroundColor: "#FFD900",
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <motion.div
+        className="flex gap-5 items-center justify-center rounded-full"
+        whileHover={{ backgroundColor: "#FFD900" }}
+      >
         <Icon />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
