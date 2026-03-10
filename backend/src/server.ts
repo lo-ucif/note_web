@@ -2,10 +2,12 @@ import express from "express";
 import { connectdatabase } from "./config/db";
 import noterouter from "./router/noterouter";
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 connectdatabase();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use("/note", noterouter);
 app.listen(5000, () => {

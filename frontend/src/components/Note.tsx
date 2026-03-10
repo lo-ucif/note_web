@@ -49,7 +49,7 @@ export default function Note({ titlen, descn, daten }: note) {
       <div className="flex flex-row justify-between items-center">
         <Logo02 />
 
-        <div className="text-[12px] text-[#FFD900]">{daten}</div>
+        <div className="text-[12px] text-[#FFD900]">{String(daten)}</div>
       </div>
     </motion.button>
   );

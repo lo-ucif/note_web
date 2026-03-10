@@ -5,11 +5,18 @@ export interface Inote extends Document {
   desc: string;
   userid: number;
   status: "completed" | "notcompleted";
+  createdAt?: Date;
+  updatedAt?: Date;
 }
-const noteshema: Schema = new Schema({
-  title: { type: String, required: true },
-  desc: { type: String, required: true },
-  userid: { type: String },
-  status: { type: String, default: "notcompleted" },
-});
-export default mongoose.model<Inote>("note", noteshema);
+
+const noteschema: Schema = new Schema(
+  {
+    title: { type: String, required: true },
+    desc: { type: String, required: true },
+    userid: { type: String },
+    status: { type: String, default: "notcompleted" },
+  },
+  { timestamps: true },
+);
+
+export default mongoose.model<Inote>("note", noteschema);
