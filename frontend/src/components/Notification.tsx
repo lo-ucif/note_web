@@ -11,7 +11,7 @@ export default function Notification() {
   return (
     <AnimatePresence>
       <motion.div
-        className="basecolor2 text-white px-4 py-2 rounded flex flex-row items-center gap-2  shadow-[0_00px_5px] shadow-amber-300"
+        className="basecolor3 text-white px-4 py-2 rounded flex flex-row items-center gap-2  shadow-[0_00px_5px] "
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -50 }}
