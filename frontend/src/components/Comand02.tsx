@@ -23,21 +23,21 @@ export default function Command02({ state, setstate }: status) {
     <div className="flex flex-row items-center justify-between px-1">
       <div className="flex flex-row items-center">
         <Link to="/">
-          <Option Icon={Return} />
+          <Option Icon={Return} message="Return"/>
         </Link>
 
         <div className="text-3xl">note</div>
       </div>
 
       <div className="flex flex-row gap-3">
-        <Option Icon={Addicon} />
-        <Option Icon={Savedicon} />
+        <Option Icon={Addicon} message="=Add icon"/>
+        <Option Icon={Savedicon} message="Save icon"/>
 
         <button onClick={toggleComplete}>
-          <Option Icon={completed ? Complet02 : Complet01} />
+          <Option Icon={completed ? Complet02 : Complet01} message="State changed"/>
         </button>
 
-        <Option Icon={Deleticon} />
+        <Option Icon={Deleticon} message="Delet icon"/>
       </div>
     </div>
   );
