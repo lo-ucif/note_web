@@ -22,5 +22,13 @@ export const getAllNotes = async () => {
   const res = await axios.get(`${API}/`);
   return res.data;
 };
-//delet all note 
-
+//delet all note
+export const deleteallNote = async () => {
+  try {
+    const res = await axios.delete(`${API}/`);
+    return res.data;
+  } catch (error) {
+    console.error("Error deleting note:", error);
+    throw error;
+  }
+};
