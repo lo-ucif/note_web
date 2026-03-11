@@ -7,8 +7,10 @@
   "type": "commonjs",
   "main": "server.ts",
   "scripts": {
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/server.ts"
+    "dev": "ts-node src/server.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "cors": "^2.8.6",
