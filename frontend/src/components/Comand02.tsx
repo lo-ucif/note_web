@@ -55,10 +55,11 @@ export default function Command02({ state, setstate }: status) {
             message="State changed"
           />
         </button>
-
-        <button onClick={() => handleDelete(id!)}>
-          <Option Icon={Deleticon} message={"not deleted"} />
-        </button>
+        <Link to="/">
+          <button onClick={() => handleDelete(id!)}>
+            <Option Icon={Deleticon} message={"not deleted"} />
+          </button>
+        </Link>
       </div>
     </div>
   );
