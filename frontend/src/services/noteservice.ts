@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/note";
+const API = "https://note-web-r1m9.onrender.com/note";
 
 export type Inote = {
   _id?: string;
