@@ -1,5 +1,4 @@
 import Option from "./Option";
-import Addicon from "../assets/Addicon";
 import Deleticon from "../assets/Deleticon";
 import Return from "../assets/Return";
 import Savedicon from "../assets/Savedicon";
@@ -17,7 +16,6 @@ type status = {
 };
 export default function Command02({ state, setstate }: status) {
   const [completed, setCompleted] = useState(false);
-  const [messages, setmessages] = useState("");
   const toggleComplete = () => {
     setCompleted(!completed);
     setstate(!state);
@@ -32,10 +30,8 @@ export default function Command02({ state, setstate }: status) {
     try {
       await deleteNote(id);
       console.log("note deleted");
-      setmessages("note deleted");
     } catch (error) {
       console.log(error);
-      setmessages(String(error));
     }
   };
   const { id } = context;
@@ -51,7 +47,6 @@ export default function Command02({ state, setstate }: status) {
       </div>
 
       <div className="flex flex-row gap-3">
-        <Option Icon={Addicon} message="=Add note" />
         <Option Icon={Savedicon} message="Save note" />
 
         <button onClick={toggleComplete}>
@@ -62,7 +57,7 @@ export default function Command02({ state, setstate }: status) {
         </button>
 
         <button onClick={() => handleDelete(id!)}>
-          <Option Icon={Deleticon} message={messages} />
+          <Option Icon={Deleticon} message={"not deleted"} />
         </button>
       </div>
     </div>
