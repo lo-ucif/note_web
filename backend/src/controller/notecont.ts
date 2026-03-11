@@ -12,7 +12,6 @@ export const addnote = async (req: Request, res: Response) => {
       message: "note not add",
       error,
     });
-    console.log("note created ");
   }
 };
 //get all note for display in home

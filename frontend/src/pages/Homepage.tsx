@@ -21,7 +21,9 @@ export default function Homepage() {
   }, []);
   if (notes.length === 0) {
     return (
-      <div>
+      <div className="flex w-full flex-col gap-2.5">
+        <Command />
+        <Search Icon={logo02} title="Search" />
         <h1>No notes found</h1>
       </div>
     );

@@ -6,14 +6,14 @@ export type Inote = {
   _id?: string;
   title: string;
   desc: string;
-  userid: number;
+  userid?: number;
   status: "completed" | "notcompleted";
   createdAt: string;
 };
 
 //add note
 export const addNote = async (note: Inote) => {
-  const res = await axios.post(`${API}/addnote`, note);
+  const res = await axios.post(`${API}/`, note);
 
   return res.data;
 };
