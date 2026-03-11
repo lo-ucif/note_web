@@ -14,7 +14,7 @@ export default function Noteallinfo({ state }: allinfo) {
     throw new Error("Must be used within NoteProvider");
   }
 
-  const { title, desc } = context;
+  const { title, desc, settitle, setdesc } = context;
   const comp = state ? "notcompleted" : "completed";
   return (
     <motion.div
@@ -27,7 +27,12 @@ export default function Noteallinfo({ state }: allinfo) {
     >
       <div className="flex justify-between items-start content-start">
         <div className="flex flex-col items-start w-[60%] gap-3">
-          <div className="text-3xl text-white">{title}</div>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => settitle(e.target.value)}
+            className="text-3xl text-white bg-transparent border-b border-gray-500 focus:outline-none w-full"
+          />
         </div>
         <Logo01 />
       </div>
@@ -35,7 +40,12 @@ export default function Noteallinfo({ state }: allinfo) {
         <div className="text-[12px] text-[#FFD900]">{comp}</div>
         <div className="text-[12px] text-[#FFD900]">04/04/2026 8:21 pm</div>
       </div>
-      <div className="text-l text-[#BBB] leading-relaxed">{desc}</div>
+      <textarea
+        value={desc}
+        onChange={(e) => setdesc(e.target.value)}
+        className="text-l text-[#BBB] leading-relaxed bg-transparent border border-gray-500 rounded p-2 w-full focus:outline-none"
+        rows={6}
+      />
     </motion.div>
   );
 }
