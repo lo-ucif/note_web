@@ -32,3 +32,20 @@ export const deleteallNote = async () => {
     throw error;
   }
 };
+// delete note
+export const deleteNote = async (id: string) => {
+  const res = await axios.delete(`${API}/${id}`);
+  return res.data;
+};
+
+// update note
+export const updateNote = async (id: string, data: Inote) => {
+  const res = await axios.put(`${API}/${id}`, data);
+  return res.data;
+};
+
+// update state
+export const updateState = async (id: string, status: string) => {
+  const res = await axios.put(`${API}/state/${id}`, { status });
+  return res.data;
+};

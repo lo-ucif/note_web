@@ -10,21 +10,23 @@ type note = {
   titlen: string;
   descn: string;
   daten: string;
+  noteid: string | undefined;
 };
-export default function Note({ titlen, descn, daten }: note) {
+export default function Note({ titlen, descn, daten, noteid }: note) {
   const context = useContext(NoteActiveContext);
 
   if (!context) {
     throw new Error("Must be used within NoteProvider");
   }
 
-  const { settitle, setdesc } = context;
+  const { settitle, setdesc, setid } = context;
 
   return (
     <motion.button
       onClick={() => {
         settitle(titlen);
         setdesc(descn);
+        setid(noteid);
       }}
       className="basecolor flex flex-col  p-5 gap-3  w-full "
       whileHover={{

@@ -45,6 +45,7 @@ export default function Homepage() {
               titlen={note.title}
               descn={note.desc}
               daten={new Date(note.createdAt).toLocaleDateString()}
+              noteid={note._id}
             />
           </Link>
         ))}
