@@ -29,7 +29,7 @@ export default function Creatnote() {
     const note: Inote = {
       title: name,
       desc: desc,
-      status: "notcompleted",
+      status: false,
       createdAt: date01,
     };
 
