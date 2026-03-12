@@ -17,7 +17,7 @@ createRoot(document.getElementById("root")!).render(
 
       <div className="w-[95%] slide-in-blurred-top">
         <div className="sticky top-0 z-10 basecolor">
-          <Textandlogo Icon={logo01} title="Hello, Ahmed !" />
+          <Textandlogo Icon={logo01} title="Hello!" />
         </div>
 
         <div className="pt-3">

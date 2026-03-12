@@ -18,11 +18,11 @@ export default function Command() {
       <div className="text-3xl">notes</div>
       <div className="flex flex-row gap-3">
         <Link to={"/creat"}>
-          <Option Icon={icon01} message="Add icon" />
+          <Option Icon={icon01} message="Creat note page" />
         </Link>
 
         <button onClick={handleDelete}>
-          <Option Icon={icon02} message="Delete icon" />
+          <Option Icon={icon02} message="all note Deleted" />
         </button>
       </div>
     </div>
