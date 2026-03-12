@@ -11,15 +11,16 @@ type note = {
   descn: string;
   daten: string;
   noteid: string | undefined;
+  state: boolean;
 };
-export default function Note({ titlen, descn, daten, noteid }: note) {
+export default function Note({ titlen, descn, daten, noteid, state }: note) {
   const context = useContext(NoteActiveContext);
 
   if (!context) {
     throw new Error("Must be used within NoteProvider");
   }
 
-  const { settitle, setdesc, setid } = context;
+  const { settitle, setdesc, setid, setdate, setcompleted } = context;
 
   return (
     <motion.button
@@ -27,6 +28,8 @@ export default function Note({ titlen, descn, daten, noteid }: note) {
         settitle(titlen);
         setdesc(descn);
         setid(noteid);
+        setdate(daten);
+        setcompleted(state);
       }}
       className="basecolor flex flex-col  p-5 gap-3  w-full "
       whileHover={{

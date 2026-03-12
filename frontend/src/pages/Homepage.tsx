@@ -20,6 +20,7 @@ export default function Homepage() {
     };
     getnotefromdb();
   }, []);
+
   if (notes.length === 0) {
     return (
       <div className="flex w-full flex-col gap-2.5 ">
@@ -49,6 +50,7 @@ export default function Homepage() {
               descn={note.desc}
               daten={new Date(note.createdAt).toLocaleDateString()}
               noteid={note._id}
+              state={note.status}
             />
           </Link>
         ))}

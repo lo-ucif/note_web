@@ -8,6 +8,10 @@ type NoteActive = {
   setdesc: (desc: string) => void;
   id: string | undefined;
   setid: (id: string | undefined) => void;
+  date: string;
+  setdate: (date: string) => void;
+  completed: boolean;
+  setcompleted: (completed: boolean) => void;
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -23,10 +27,23 @@ export function NoteProvider({ children }: UserProviderProps) {
   const [title, settitle] = useState<string>("");
   const [desc, setdesc] = useState<string>("");
   const [id, setid] = useState<string | undefined>("");
+  const [date, setdate] = useState<string>("");
+  const [completed, setcompleted] = useState<boolean>(false);
 
   return (
     <NoteActiveContext.Provider
-      value={{ title, settitle, desc, setdesc, id, setid }}
+      value={{
+        title,
+        settitle,
+        desc,
+        setdesc,
+        id,
+        setid,
+        date,
+        setdate,
+        completed,
+        setcompleted,
+      }}
     >
       {children}
     </NoteActiveContext.Provider>

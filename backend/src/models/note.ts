@@ -4,7 +4,7 @@ export interface Inote extends Document {
   title: string;
   desc: string;
   userid: number;
-  status: "completed" | "notcompleted";
+  status: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -14,7 +14,7 @@ const noteschema: Schema = new Schema(
     title: { type: String, required: true },
     desc: { type: String, required: true },
     userid: { type: String },
-    status: { type: String, default: "notcompleted" },
+    status: { type: Boolean, default: false },
   },
   { timestamps: true },
 );

@@ -4,18 +4,16 @@ import "../style/animation.css";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { NoteActiveContext } from "../context/notecontext";
-type allinfo = {
-  state: boolean | undefined;
-};
-export default function Noteallinfo({ state }: allinfo) {
+
+export default function Noteallinfo() {
   const context = useContext(NoteActiveContext);
 
   if (!context) {
     throw new Error("Must be used within NoteProvider");
   }
 
-  const { title, desc, settitle, setdesc } = context;
-  const comp = state ? "notcompleted" : "completed";
+  const { title, desc, settitle, setdesc, date, completed } = context;
+  const comp = completed ? "completed" : "notcompleted";
   return (
     <motion.div
       className="basecolor flex flex-col  p-5 gap-3  w-full "
@@ -38,7 +36,7 @@ export default function Noteallinfo({ state }: allinfo) {
       </div>
       <div className="flex flex-row justify-between items-center">
         <div className="text-[12px] text-[#FFD900]">{comp}</div>
-        <div className="text-[12px] text-[#FFD900]">04/04/2026 8:21 pm</div>
+        <div className="text-[12px] text-[#FFD900]">{date}</div>
       </div>
       <textarea
         value={desc}

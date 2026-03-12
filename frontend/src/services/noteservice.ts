@@ -7,7 +7,7 @@ export type Inote = {
   title: string;
   desc: string;
   userid?: number;
-  status: "completed" | "notcompleted";
+  status: boolean;
   createdAt: string;
 };
 
@@ -45,7 +45,7 @@ export const updateNote = async (id: string, data: Inote) => {
 };
 
 // update state
-export const updateState = async (id: string, status: string) => {
+export const updateState = async (id: string | undefined, status: boolean) => {
   const res = await axios.put(`${API}/state/${id}`, { status });
   return res.data;
 };
