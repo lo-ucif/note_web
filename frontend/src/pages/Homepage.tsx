@@ -50,9 +50,9 @@ export default function Homepage() {
       <Search Icon={logo02} title="Search" />
 
       <motion.div
-        initial={{ opacity: 0, x: -2000, y: 0 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, x: 0, y: +2000 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.9 }}
         className="flex flex-col items-start gap-2.5 self-stretch"
       >
         {filteredNotes.length === 0 ? (
