@@ -1,10 +1,10 @@
 import "../style/style.css";
 import Onenoteicon from "../assets/Onenoteiconmini";
-import { useNotification } from "../context/NotificationContext";
+import { UseNotification } from "../context/NotificationContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Notification() {
-  const { active, message } = useNotification();
+  const { active, message } = UseNotification();
 
   if (!active) return null;
 

@@ -6,7 +6,7 @@ import type { Inote } from "../services/noteservice";
 import Return from "../assets/Return";
 import { Link } from "react-router-dom";
 import Option from "../components/Option";
-import { useNotification } from "../context/NotificationContext";
+import { UseNotification } from "../context/NotificationContext";
 
 export default function Creatnote() {
   const getCurrentDateString = (): string => {
@@ -18,7 +18,7 @@ export default function Creatnote() {
 
     return `${day}/${month}/${year}`;
   };
-  const { showNotification } = useNotification();
+  const { showNotification } = UseNotification();
 
   const [name, setname] = useState("");
   const [desc, setdesc] = useState("");

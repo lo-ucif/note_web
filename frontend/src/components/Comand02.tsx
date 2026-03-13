@@ -89,7 +89,7 @@ export default function Command02() {
 
         <button onClick={() => toggleComplete(id!, completed)}>
           <Option
-            Icon={completed ? Complet02 : Complet01}
+            Icon={completed ? Complet01 : Complet02}
             message="State changed"
           />
         </button>

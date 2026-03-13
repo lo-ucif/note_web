@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/style.css";
 import { motion } from "framer-motion";
-import { useNotification } from "../context/NotificationContext";
+import { UseNotification } from "../context/NotificationContext";
 
 type info = {
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -9,7 +9,7 @@ type info = {
 };
 
 export default function Option({ Icon, message }: info) {
-  const { showNotification } = useNotification();
+  const { showNotification } = UseNotification();
   return (
     <motion.div
       onClick={() => showNotification(message)}

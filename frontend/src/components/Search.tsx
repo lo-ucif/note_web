@@ -1,17 +1,20 @@
 import React from "react";
 import "../style/style.css";
+import { Usesearch } from "../context/Searchcontext";
 type Info = {
   title: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export default function Search({ Icon, title }: Info) {
+  const { text, settext } = Usesearch();
   return (
     <div className="relative mb-3 basecolor p-3">
       <input
         type="text"
         id="exampleFormControlInput1"
-        // placeholder={title}
+        value={text}
+        onChange={(e) => settext(e.target.value)}
         className="peer block min-h-auto w-full rounded border-0 bg-transparent px-3 pr-10 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-twe-input-state-active:placeholder:opacity-100 dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
       />
 
